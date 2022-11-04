@@ -1,7 +1,12 @@
 
 variable "region" {
-    description = "AWS region"
-    type        = string
+  description = "AWS region"
+  type        = string
+}
+
+variable "account_number" {
+  description = "AWS account numver"
+  type        = number
 }
 
 variable "project" {
@@ -17,4 +22,9 @@ variable "environment" {
 variable "repository" {
   description = "Repository"
   type        = map
+}
+
+variable "build" {
+  description = "Build"
+  type        = any
 }
