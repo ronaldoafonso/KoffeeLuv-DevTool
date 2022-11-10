@@ -37,8 +37,8 @@
         {
             "Effect": "Allow",
             "Resource": [
-                "arn:aws:s3:::ra-koffeeluv-artifacts",
-                "arn:aws:s3:::ra-koffeeluv-artifacts/*"
+                "arn:aws:s3:::${s3_artifact}",
+                "arn:aws:s3:::${s3_artifact}/*"
             ],
             "Action": [
                 "s3:PutObject",

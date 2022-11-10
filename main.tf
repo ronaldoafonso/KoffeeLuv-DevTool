@@ -27,7 +27,12 @@ resource "aws_iam_role" "iam_role" {
 
 resource "aws_iam_role_policy" "iam_role_policy" {
   role   = aws_iam_role.iam_role.name
-  policy = templatefile("role_policy.json", {account_number = var.account_number, region = var.region, repo = var.repository.name})
+  policy = templatefile("role_policy.json", {
+    account_number = var.account_number,
+    region         = var.region,
+    repo           = var.repository.name,
+    s3_artifact    = var.build.artifacts.s3
+  })
 }
 
 resource "aws_codebuild_project" "build_project" {
